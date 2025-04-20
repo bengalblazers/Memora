@@ -108,7 +108,7 @@ Ensure your frontend/backend points to `http://localhost:11434`.
 |--------------------|---------------|------------------|----------------|
 | 🧠 Team Lead       | Tousif Azim   | [@tousifazim](https://github.com/Tousif18) | [Tousif Azim](https://linkedin.com/in/tousifazim) |
 | 🎨 Developer & Designer | Sayan Dutta   | [@Sd8698621](https://github.com/Sd8698621) | [Sayan Dutta](https://linkedin.com/in/sayandutta8653128442) |
-| 🔧 DevOps Engineer | Ranjan        | [@ranjan-github](https://github.com/ds-with-ranjan) | [Ranjan](https://linkedin.com/in/ranjan-chakraborty-473621315) |
+| 🔧 DevOps Engineer | Ranjan        | [@ranjan-github](https://github.com/ds-with-ranjan) | [Ranjan Chakrabortty](https://linkedin.com/in/ranjan-chakraborty-473621315) |
 
 ---
 
