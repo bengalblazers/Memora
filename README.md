@@ -118,5 +118,8 @@ If Memora inspires you, please give us a ⭐️ on GitHub!
 👉 [GitHub Repository](https://github.com/Sd8698621/Memora)
 
 ---
+☕ Buy Me a Coffee
+If you appreciate our work and want to support our journey, consider buying us a coffee:
 
+<a href="https://www.buymeacoffee.com/sayandutta" target="_blank"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="200" /> </a>
 **Memora: Because memories matter.**
