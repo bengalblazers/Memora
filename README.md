@@ -1,6 +1,6 @@
 # 🧠 Memora — Your AI Memory & Wellness Companion
 
-**Memora** is a GenAI-powered memory and wellness companion crafted with love for the elderly. Whether it’s remembering medications, logging memories, tracking moods, or just chatting with a caring AI — Memora is here to help. 💬🕰️❤️
+**Memora** is a GenAI-powered memory and wellness companion designed with care for the elderly. From remembering medications to logging memories, tracking moods, or chatting with a supportive AI — Memora is here to assist. 💬🕰️❤️
 
 > Built with passion by **Team Bengal Blazers** at Aignite 2025 🏆
 
@@ -9,28 +9,28 @@
 ## 🚀 Features
 
 - 🧘‍♀️ **Mood & Memory Tracking**  
-  Record how you feel and what matters, using voice or text.
+   Log your feelings and important moments using voice or text.
 
 - 🗓️ **Smart Reminders**  
-  Never miss a pill or appointment again.
+   Stay on top of medications and appointments effortlessly.
 
 - 🗣️ **GenAI Conversations**  
-  Chat with Memora for emotional support, memory recall, or friendly conversation.
+   Engage in meaningful chats for emotional support, memory recall, or friendly interaction.
 
 - 📖 **Memory Diary**  
-  Log precious moments with ease and revisit them anytime.
+   Capture and revisit cherished moments with ease.
 
 - 🚨 **Emergency SOS**  
-  One-tap alert system for caregivers and emergency contacts.
+   Instantly alert caregivers and emergency contacts with one tap.
 
 - 👨‍👩‍👧‍👦 **Caregiver Dashboard**  
-  Allow loved ones to monitor reminders, moods, and logs.
+   Enable loved ones to monitor reminders, moods, and logs.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React + Expo  
+- **Frontend:** React, Expo  
 - **Backend:** Python (Flask), Firebase, SQLite, MySQL  
 - **AI/Voice:** Ollama (Local AI Inference)  
 - **Design:** Figma  
@@ -50,8 +50,73 @@
 
 ---
 
-### 📥 Clone the Repo
+### 📥 Clone the Repository
 
 ```bash
 git clone https://github.com/Sd8698621/Memora.git
 cd Memora
+npm install
+```
+
+If you encounter dependency issues, run:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+---
+
+### ▶️ Run the Expo App
+
+```bash
+npx expo start
+```
+
+- Scan the QR code in Expo Go (Android/iOS)  
+- Or run on an emulator/simulator
+
+---
+
+### 🧠 Backend Setup (Flask API)
+
+```bash
+cd backend  # Navigate to the backend folder
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
+```
+
+- Create a `.env` file for Flask configuration, Firebase, and local endpoints.
+
+---
+
+### 🤖 Run Ollama for AI
+
+```bash
+ollama serve
+ollama run your-model-name
+```
+
+Ensure your frontend/backend points to `http://localhost:11434`.
+
+---
+
+## 👥 Team Bengal Blazers
+
+| Role               | Name          | GitHub           | LinkedIn       |
+|--------------------|---------------|------------------|----------------|
+| 🧠 Team Lead       | Tousif Azim   | [@tousifazim](https://github.com/tousifazim) | [Tousif Azim](https://linkedin.com/in/tousifazim) |
+| 🎨 Developer & Designer | Sayan Dutta   | [@Sd8698621](https://github.com/Sd8698621) | [Sayan Dutta](https://linkedin.com/in/sayan-dutta) |
+| 🔧 DevOps Engineer | Ranjan        | [@ranjan-github](https://github.com/ranjan-github) | [Ranjan](https://linkedin.com/in/ranjan) |
+
+---
+
+## 🌟 Show Us Some Love
+
+If Memora inspires you, please give us a ⭐️ on GitHub!  
+👉 [GitHub Repository](https://github.com/Sd8698621/Memora)
+
+---
+
+**Memora: Because memories matter.**
