@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Recognition</title>
+  <style>
+    /* General body and layout styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+    }
+
+    /* Container for content with blur effect */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border-radius: 20px;
+      width: 85%;
+      max-width: 400px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Title styling */
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+    }
+
+    /* Subtitle styling */
+    .subtitle {
+      font-size: 18px;
+      color: #f1f1f1;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #3b82f6;
+      color: white;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 250px;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+    }
+
+    /* Result display styling */
+    #result {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      color: #d1d5db;
+      font-weight: 500;
+      text-align: center;
+      line-height: 1.6;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      max-width: 350px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="title">Voice Recognition</h1>
+    <p class="subtitle">Click to start or stop the voice recognition</p>
+
+    <button id="startStopButton">Start Listening</button>
+    <p id="result">Say something...</p>
+  </div>
+
+  <script>
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const startStopButton = document.getElementById('startStopButton');
+    const resultDisplay = document.getElementById('result');
+    
+    let recognition;
+    let isListening = false;
+    let userSpeech = '';
+
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      // Start/Stop button functionality
+      startStopButton.addEventListener('click', () => {
+        if (isListening) {
+          recognition.stop();
+          startStopButton.textContent = 'Start Listening';
+          resultDisplay.textContent = 'Stopped Listening...';
+
+          // Send request to Ollama API after stopping speech recognition
+          sendToOllama(userSpeech);
+        } else {
+          recognition.start();
+          startStopButton.textContent = 'Stop Listening';
+          resultDisplay.textContent = 'Listening...';
+        }
+        isListening = !isListening;
+      });
+
+      recognition.onresult = (event) => {
+        let transcript = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          transcript += event.results[i][0].transcript;
+        }
+        userSpeech = transcript;  // Store user speech for API call
+        resultDisplay.textContent = transcript;
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        resultDisplay.textContent = 'Error occurred while recognizing speech.';
+      };
+
+      recognition.onend = () => {
+        console.log('Speech recognition ended');
+        startStopButton.textContent = 'Start Listening';
+        isListening = false;
+      };
+    } else {
+      alert('Your browser does not support the SpeechRecognition API.');
+    }
+
+    // Function to send speech to Ollama API with model name "Blix"
+    const sendToOllama = async (speech) => {
+      try {
+        const response = await fetch('http://172.16.50.107:3000/api/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: 'Blix',  // Model name updated to "Blix"
+            prompt: speech,  // Send the speech as the prompt
+            stream: false,  // Set to true if you want streaming responses
+          }),
+        });
+
+        const data = await response.json();
+
+        // Display the response from Ollama in the UI
+        resultDisplay.textContent = data.response || 'No response from Ollama.';
+        
+        // Convert the response to speech (Text-to-Speech)
+        speak(data.response);
+      } catch (error) {
+        console.error('Error sending data to Ollama:', error);
+        resultDisplay.textContent = 'Error sending request due to network issues.';
+      }
+    };
+
+    // Function for Text-to-Speech
+    const speak = (text) => {
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';  // Set the language for the speech
+        speechSynthesis.speak(utterance);  // Speak the response
+      } else {
+        alert('Your browser does not support Text-to-Speech.');
+      }
+    };
+  </script>
+
+</body>
+</html>

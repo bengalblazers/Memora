@@ -1,0 +1,39 @@
+{
+  "name": "memora",
+  "version": "1.0.2",
+  "description": "This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).",
+  "homepage": "https://github.com/Sd8698621/Memora#readme",
+  "bugs": {
+    "url": "https://github.com/Sd8698621/Memora/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sd8698621/Memora.git"
+  },
+  "license": "ISC",
+  "author": "Sayan Dutta",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run android"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.1.0",
+    "@react-native-async-storage/async-storage": "^2.1.2",
+    "@react-native-masked-view/masked-view": "^0.3.2",
+    "@react-navigation/native": "^7.1.6",
+    "@react-navigation/stack": "^7.2.10",
+    "axios": "^1.8.4",
+    "expo-blur": "^14.0.3",
+    "expo-linear-gradient": "^14.0.2",
+    "expo-location": "^18.0.10",
+    "formik": "^2.4.6",
+    "lucide-react-native": "^0.501.0",
+    "react-native-gesture-handler": "^2.25.0",
+    "react-native-paper": "^5.13.3",
+    "react-native-reanimated": "^3.17.4",
+    "react-native-safe-area-context": "^5.4.0",
+    "react-native-screens": "^4.10.0",
+    "yup": "^1.6.1"
+  }
+}
