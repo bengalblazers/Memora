@@ -106,9 +106,9 @@ Ensure your frontend/backend points to `http://localhost:11434`.
 
 | Role               | Name          | GitHub           | LinkedIn       |
 |--------------------|---------------|------------------|----------------|
-| 🧠 Team Lead       | Tousif Azim   | [@tousifazim](https://github.com/tousifazim) | [Tousif Azim](https://linkedin.com/in/tousifazim) |
-| 🎨 Developer & Designer | Sayan Dutta   | [@Sd8698621](https://github.com/Sd8698621) | [Sayan Dutta](https://linkedin.com/in/sayan-dutta) |
-| 🔧 DevOps Engineer | Ranjan        | [@ranjan-github](https://github.com/ranjan-github) | [Ranjan](https://linkedin.com/in/ranjan) |
+| 🧠 Team Lead       | Tousif Azim   | [@tousifazim](https://github.com/Tousif18) | [Tousif Azim](https://linkedin.com/in/tousifazim) |
+| 🎨 Developer & Designer | Sayan Dutta   | [@Sd8698621](https://github.com/Sd8698621) | [Sayan Dutta](https://linkedin.com/in/sayandutta8653128442) |
+| 🔧 DevOps Engineer | Ranjan        | [@ranjan-github](https://github.com/ds-with-ranjan) | [Ranjan](https://linkedin.com/in/ranjan-chakraborty-473621315) |
 
 ---
 
