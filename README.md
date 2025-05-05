@@ -2,7 +2,7 @@
 
 **Memora** is a GenAI-powered memory and wellness companion designed with care for the elderly. From remembering medications to logging memories, tracking moods, or chatting with a supportive AI — Memora is here to assist. 💬🕰️❤️
 
-> Built with passion by **Team Bengal Blazers** at Aignite 2025 🏆
+> Built with passion by **Team Bengal Blazers** at HELLO WORLD HACKS 🏆
 
 ---
 
