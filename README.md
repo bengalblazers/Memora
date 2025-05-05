@@ -53,7 +53,7 @@
 ### 📥 Clone the Repository
 
 ```bash
-git clone https://github.com/Sd8698621/Memora.git
+git clone https://github.com/bengalblazers/Memora.git
 cd Memora
 npm install
 ```
@@ -69,7 +69,7 @@ npm install --legacy-peer-deps
 ### ▶️ Run the Expo App
 
 ```bash
-npx expo start
+npx run
 ```
 
 - Scan the QR code in Expo Go (Android/iOS)  
